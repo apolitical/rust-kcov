@@ -43,17 +43,19 @@ Explained:
 - `shopt` is for shell options, `-s` is to turn an option on, `extglob` is for extended pattern
 - `--include-pattern` is used to limit which files will be included in the report (without it, it
   will report on all dependencies etc, which isn't useful information and will throw off coverage %)
-- `--verify` checks for problems when the app was compiled, weirdly coverage doesn't work without
+- `--verify` checks for problems when the app was compiled, weirdly kcov doesn't work on Rust
+  without
   it.
 - You must then provide two locations:
   1. Where your coverage report to go, in this case `target/cov`
   2. The file to run. When `cargo test` runs it will create a file named after your project but with
      some random characters after it, but it creates a second file, almost the same but with a `.d`
-     after it. This means you can nout use `<your-app-name>-*` because kcov will fail. Using
+     after it. This means you cannot use `<your-app-name>-*` because kcov will fail. Using
      `extglob` though, we're able to select a file with an alpha numeric suffix (i.e. no `.`).
 
 ## Contributing
 
-This is a very loosley cobbled together project, I really hope you'll find it useful. If you have
+This is a very loosely cobbled together project, I really hope you'll find it useful. If you have
 any problems with it, please open an issue. If you'd like to make a Pull Request please do!
-Checkout the [Contributing](CONTRIBUTING.md) guide and [Code of Conduct](CODE_OF_CONDUCT.md).
+Checkout the [Contributing](CONTRIBUTING.md) guide and [Code of Conduct](CODE_OF_CONDUCT.md) for
+more information.
