@@ -18,14 +18,6 @@ RUN apt-get install -y libcurl4-openssl-dev \
  && cd build \
  && cmake .. \
  && make \
- && make install \
- && apt-get remove -y libcurl4-openssl-dev \
-                      libelf-dev \
-                      libdw-dev \
-                      cmake \
-                      gcc \
-                      binutils-dev \
-                      libiberty-dev \
-                      zlib1g-dev
+ && make installad
 
 WORKDIR /app
