@@ -18,6 +18,6 @@ RUN apt-get install -y libcurl4-openssl-dev \
  && cd build \
  && cmake .. \
  && make \
- && make installad
+ && make install
 
 WORKDIR /app
